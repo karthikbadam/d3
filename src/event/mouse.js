@@ -25,6 +25,8 @@ function d3_mousePoint(container, e) {
       d3_mouse_bug44083 = !(ctm.f || ctm.e);
       svg.remove();
     }
+
+    // polychrome requires a change here!
     if (d3_mouse_bug44083) point.x = e.pageX, point.y = e.pageY;
     else point.x = e.clientX, point.y = e.clientY;
     point = point.matrixTransform(container.getScreenCTM().inverse());
